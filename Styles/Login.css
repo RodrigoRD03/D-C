@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root{
+    --color-page: #000000;
+    --color-white: #fff;
+    --color-blue: rgb(84, 209, 247);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+}
+
+.grid-Container{
+    display: grid;
+    grid-template: 
+    "Form" auto
+    "Image" 200px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Form {
+    grid-area: Form;
+    background-color: #ffffff;
+    padding: 20px;
+    display: grid;
+    grid-template:
+        "Tittle"
+        "Inputs";
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    gap: 20px;
+}
+
+.fa-right-to-bracket {
+    text-align: center;
+    font-size: 6em;
+    color: var(--color-page);
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.25));
+}
+
+.fa-address-book{
+    text-align: center;
+    font-size: 6em;
+    color: var(--color-page);
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.25));
+}
+
+.Section-Tittle {
+    display: grid;
+    grid-area: Tittle;
+    gap: 20px;
+    justify-content: center;
+    height: min-content;
+    align-self: end;
+}
+
+.Section-Tittle h1{
+    font-size: 2.5  em;
+}
+
+.Tittles{
+    font-size: .9em;
+    display:block;
+}
+
+.Section-Inputs{
+    display: flex; 
+    justify-content: center; 
+}
+
+.aspNetHidden {
+    display: none;
+}
+
+form {
+    grid-area: Inputs;
+    display: grid;
+    gap: 20px;
+    width: min-content;
+    height: min-content;
+}
+
+.Area-Input_Name{
+    display: grid;
+    grid-template:
+        "Tittles Tittles"
+        "Icon Input";
+    align-items: center;
+}
+
+.Area-Input_password {
+    display: grid;
+    grid-template:
+        "Tittles Tittles Tittles"
+        "Icon Input Eye";
+    align-items: center;
+}
+
+.Tittles {
+    grid-area: Tittles;
+    margin-bottom: 7px;
+}
+
+.Icons {
+    grid-area: Icon;
+    padding: 10px;
+}
+
+.fa-user, .fa-lock, .fa-location-dot, .fa-calendar, .fa-phone {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-page);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+}
+
+.fa-envelope {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-page);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+}
+
+.fa-eye { 
+    grid-area: Eye;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-page);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: none;
+    cursor: pointer;
+}
+
+.input-Text {
+    grid-area: Input;
+    height: 40px;
+    width: 256.5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid var(--color-page);
+    padding: 10px;
+    transition: .2s;
+    outline: none;
+}
+
+.input-Password {
+    width: 216.5px;
+    grid-area: Input;
+    height: 40px;
+    border: 1px solid var(--color-page);
+    padding: 10px;
+    transition: .2s;
+    outline: none;
+}
+
+.input-Password:hover, .input-Text:hover {
+    border: 1px solid var(--color-white);
+    background-color: #e2e2e2;
+}
+
+.input-Password:hover .fa-user {
+    background-color: red;
+}
+
+.input-Password:focus, .input-Text:focus {
+    border: 1px solid var(--color-blue);
+}
+
+.Area-NC{
+    width: 100%;
+    text-align: right;
+}
+
+.NC-A{
+    font-size: .8em;
+}
+
+.NC-A:hover{
+    color: var(--color-blue);
+}
+
+.button {
+    height: 40px;
+    width: 293.44px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-page);
+    transition: .3s;
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+.Area-Input_Button .button:hover {
+    background-color: var(--color-blue);
+    color: var(--color-page);
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.40);
+}
+
+.fa-truck {
+    text-align: center;
+    font-size: 6em;
+    color: var(--color-page);
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.25));
+}
+
+.numbers-Containers {
+    display: flex;
+}
+
+.Area-Input_Name, .Area-Input_Edad, .Area-Input_Telefono, .Area-Input_Direction {
+    display: grid;
+    grid-template:
+        "Tittles Tittles"
+        "Icon Input";
+    align-items: center;
+    justify-content: center;
+}
+
+
+h3 {
+    grid-area: Tittles;
+}
+
+.Name-Content, .Direccion_Content, .Edad-Content, .Telefono-Content {
+    grid-area: Input;
+    height: 40px;
+    width: 256.5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid var(--color-page);
+    padding: 10px;
+    transition: .2s;
+    outline: none;
+}
+
+.eye{
+    padding: 10px;
+}
+.Image {
+    grid-area: Image;
+    object-fit: cover;
+}
+
+.Image{
+    padding: 20px;
+    background-color: #ffff;
+}
+
+.Area-Image{
+    width: 100%;
+    height: 100%;
+}
+
+.Image-I {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+
+
+
+@media(min-width: 624px){
+    .grid-Container{
+        grid-template: 
+        "Form Image" 100% /
+        50% 50%;
+    }
+
+    .Image{
+        padding-right: 50px;
+    }
+    
+}
