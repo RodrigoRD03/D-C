@@ -1,23 +1,19 @@
 <aside class="Aside-Content">
-    <div class="Nombre-Administrador">
-        <span><i class="fa-solid fa-user"></i></span>
-        <div class="Nombre-Area">
-            <h1>Rodrigo</h1>
-            <h3>Rodriguez Díaz</h3>
-        </div>
+    <div class="AreaLogo">
+        <img class="LogoPage" src="./media/D&C.png" alt="">
         <hr />
     </div>
     <div class="Opciones-Content">
         <div class="Opciones-Tittle">
             <h2>Opciones</h2>
         </div>
-        <a href="./Administrador.php" class="Option-Area">
+        <a href="./ListaProductos.php" class="Option-Area">
             <span><i class="fa-solid fa-cart-arrow-down Icons"></i></span>
             <div class="Text-Option">
                 <p>Productos</p>
             </div>
         </a>
-        <a href="./Proveedores.php" class="Option-Area">
+        <a href="./EliminarProveedor.php" class="Option-Area">
             <span><i class="fa-solid fa-motorcycle Icons"></i></span>
             <div class="Text-Option">
                 <p>Proveedores</p>

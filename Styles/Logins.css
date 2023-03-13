@@ -283,7 +283,23 @@ h3 {
 }
 
 
+.Registro-Exitoso{
+    color: #10b139;
+    text-align: center;
+}
 
+.Inicio-Fallido{
+    color: rgb(247, 52, 52);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.Inicio-Fallido span{
+    font-size: 1.5em;
+}
 
 @media(min-width: 624px){
     .grid-Container{

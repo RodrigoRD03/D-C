@@ -4,7 +4,9 @@
     --color-page: #000000;
     --color-white: #fff;
     --color-blue: #54d1f7;
-    
+    --Amarrillo: #ff9806;
+    --Rojo: #ff6961;
+    --Blanco: #fff;
 }
 
 *{
@@ -79,6 +81,7 @@ body {
     grid-template-columns: repeat(2, 50%);
 }
 
+
 .Nombre-Administrador{
     width: 100%;
     height: 80px;
@@ -125,6 +128,18 @@ body {
     grid-area: espacio;
     width: 100%;
 }
+
+.AreaLogo{
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.LogoPage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 
 .Opciones-Content{
     width: 100%;
@@ -377,11 +392,11 @@ body {
     position: relative;
     top: -115px;
     left: 8px;
-    background-color: var(--Rojo);
+    background-color: var(--color-blue);
     border-radius: 50vh;
     width: max-content;
     padding: 5px;
-    color: white;
+    color: var(--color-page);
     font-size: 1.1em;
     transition: .3s;
 }
@@ -1249,6 +1264,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 .Icono-Usuario-star{
     color: var(--Amarrillo)
+}
+
+.Registro-Exitoso{
+    color: #10b139;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.Registro-Exitoso span{
+    font-size: 1.5em;
 }
 
 @media(min-width: 728px){
