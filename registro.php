@@ -28,7 +28,7 @@
                 <div class="Area-Input_Name">
                     <h3 class="Tittles">Apellidos</h3>
                     <i class="fa-solid fa-user Icons"></i>
-                    <input type="text" class="input-Text" name="apellidos" id="apellidos" placeholder="Apelldios"  required />
+                    <input type="text" class="input-Text" name="apellidos" id="apellidos" placeholder="Apelldios" required />
                 </div>
                 <div class="Area-Input_Name">
                     <h3 class="Tittles">Correo Electronico</h3>

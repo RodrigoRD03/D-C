@@ -1,3 +1,9 @@
+<?php
+if (isset($_POST['cerrarSesion'])) {
+    session_destroy();
+    header('Location: ../index.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +18,7 @@
 </head>
 
 <body class="grid-Container">
-    <section class="Form" >
+    <section class="Form">
         <div class="Section-Tittle">
             <i class="fa-solid fa-right-to-bracket"></i>
             <h1>Iniciar Sesión</h1>
@@ -68,11 +74,11 @@
         // Buscar al usuario en la tabla de administradores
         $sql = "SELECT * FROM administradores WHERE nombre_de_usuario='$usuarioE' AND contraseña='$contraseña'";
         $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
             // El usuario ha sido encontrado, iniciar sesión
+            $sesion = $usuarioE;
             session_start();
-            $_SESSION['usuario'] = $usuario;
+            $_SESSION['usuario'] = $sesion;
 
             // Redirigir a la página principal
             header("Location: ListaProductos.php");

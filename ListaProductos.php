@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a3c9717c3d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./Styles/Styles.css">
+    <link rel="stylesheet" href="./Styles/Style.css">
     <title>Administrador</title>
 </head>
 
@@ -15,7 +15,8 @@
         <span><i class="fa-solid fa-chevron-right"></i></span>
     </div>
     <?php
-    require('./components/aside.php')
+    require('./components/aside.php');
+    require('./funciones.php');
     ?>
     <section class="Content-Section">
         <div class="Page_Seleccion">
@@ -27,7 +28,10 @@
             <div class="Barras">
                 <div class="Titulo">
                     <h1>Lista de Productos</h1>
-                    <h4>Numero de Productos: 48</h4>
+                    <?php
+
+                    echo "<h4>Numero de Productos: " . obtener_numero_productos() . "</h4>"
+                    ?>
                     <span><i class="fa-solid fa-boxes-stacked"></i></span>
                 </div>
                 <form action="./AñadirProductos.php">
@@ -57,17 +61,18 @@
 
                 ?>
 
-                
+
                 <?php
                 // Mostrar cada producto en una fila de la tabla
                 if ($resultado->num_rows > 0) {
-                    while ($fila = $resultado->fetch_assoc()) {
+                    while ($info = $resultado->fetch_assoc()) {
                         echo "<div class='Producto'>
                                 <div class='Imagen-Area'> 
-                                    <img class='Imagen-Producto' src='" . $fila['Foto'] ."' alt='". $fila["nombre"] ."' />
-                                    <h2>". $fila["nombre"] ."</h2>
-                                    <form action='./AñadirProductos.php'>
-                                        <button class='Producto-Info'><i class='fa-solid fa-chevron-right'></i></button>
+                                    <img class='Imagen-Producto' src='" . $info['Foto'] . "' alt='" . $info["nombre"] . "' />
+                                    <h2>" . $info["nombre"] . "</h2>
+                                    <form action='./EditarProducto.php'>
+                                        <input class='input_Id' type='number' name='id' value='" . $info["ID_producto"] . "'>
+                                        <button class='Producto-Info' type='submit'><i class='fa-solid fa-chevron-right'></i></button>
                                     </form>
                                 </div>
                             </div>";
@@ -79,6 +84,7 @@
                 // Cerrar la conexión a la base de datos
                 $conn->close();
                 ?>
+            </div>
     </section>
     <script src="./Dom/Aside.js"></script>
 </body>

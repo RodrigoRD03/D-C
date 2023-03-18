@@ -13,7 +13,7 @@
                 <p>Productos</p>
             </div>
         </a>
-        <a href="./EliminarProveedor.php" class="Option-Area">
+        <a href="./Proveedores.php" class="Option-Area">
             <span><i class="fa-solid fa-motorcycle Icons"></i></span>
             <div class="Text-Option">
                 <p>Proveedores</p>
@@ -26,13 +26,14 @@
             </div>
         </a>
     </div>
-    <div class="Logout-Content">
+    <form action="./index.php" class="Logout-Content">
         <hr />
-        <div class="Logout-Area">
+        <input type="hidden" name="cerrarSesion" value="1">
+        <button type="submit" class="Logout-Area">
             <span><i class="fa-solid fa-right-from-bracket"></i></span>
             <div>
                 <h3>Cerrar Sesión</h3>
             </div>
-        </div>
-    </div>
+        </button>
+    </form>
 </aside>

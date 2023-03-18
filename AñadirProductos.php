@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a3c9717c3d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./Styles/Styles.css">
+    <link rel="stylesheet" href="./Styles/Style.css">
     <title>Administrador</title>
 </head>
 
@@ -15,13 +15,13 @@
         <span><i class="fa-solid fa-chevron-right"></i></span>
     </div>
     <?php
-    require('./components/aside.php')
+    require('./components/aside.php');
     ?>
     <section class="Content-Section">
         <div class="Page_Seleccion">
             <h3 class="Pagina">Pagina&nbsp</h3>
             <h3 class="Seleccion">/&nbspProductos</h3>
-            <h2 class="Titulo-Pagina">Añadir Productos</h>
+            <h2 class="Titulo-Pagina">Añadir Productos</h2>
         </div>
         <div class="Contenido">
             <div class="Instrucciones">
@@ -29,7 +29,7 @@
                 <span><i class="fa-solid fa-pen"></i></span>
             </div>
             <div class="Formulario-Imagenes">
-                <form method="post" action="AñadirProductos.php" class="Formulario formulario">
+                <form method="post" action="./AñadirProductos.php" class="Formulario formulario">
                     <div class="Area-Nombre">
                         <h3>Nombre del Producto</h3>
                         <span><i class="fa-regular fa-comment"></i></span>
@@ -50,7 +50,7 @@
 
                     <div class="Area-Descripcion">
                         <h3>Agrega una Descripcion:</h3>
-                        <textarea class="textarea" name="descripcion" id="descripcion" rows="4" cols="30" required></textarea>
+                        <input type="text" class="textarea" name="descripcion" id="descripcion" required></input>
                     </div>
 
                     <div class="Area-Nombre">
@@ -80,7 +80,7 @@
 
     // Verificar si la conexión es exitosa
     if ($conn->connect_error) {
-        die("Error al conectar a la base de datos: " . $conexion->connect_error);
+        die("Error al conectar a la base de datos: " . $conn->connect_error);
     }
 
     // Obtener los datos del formulario
@@ -96,6 +96,7 @@
     $sql = "INSERT INTO productos (nombre, descripcion, precio, proveedor, Foto) VALUES (?, ?, ?, ?, ?)";
     $consulta = $conn->prepare($sql);
 
+
     // Verificar si la consulta preparada es exitosa
     if ($consulta === false) {
         die("Error al preparar la consulta: " . $conn->error);
@@ -103,18 +104,18 @@
     // Vincular los parámetros de la consulta preparada
     $consulta->bind_param("sdsss", $nombre, $descripcion, $precio, $proveedor, $imagen);
 
+
     // Ejecutar la consulta
     if ($consulta->execute()) {
         echo "<script>
             const seccion = document.querySelector('.Formulario');
             seccion.innerHTML += `<p class='Registro-Exitoso''><span><i class='fa-solid fa-check'></i></span>Registrado con exito </p>`;
         </script>";
-    } 
+    }
     // Cerrar la consulta y la conexión
     $consulta->close();
     $conn->close();
     ?>
-
     <script src="./Dom/Aside.js"></script>
 </body>
 

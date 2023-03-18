@@ -6,5 +6,5 @@ desplegar.addEventListener('click', () =>{
         desplegar.classList.toggle("Desplazar")
 })
 
-const seccion = document.querySelector('.Section-Inputs');
-seccion.innerHTML += `<p>Registro Exitoso</p>`;
+// const seccion = document.querySelector('.Section-Inputs');
+// seccion.innerHTML += `<p>Registro Exitoso</p>`;
